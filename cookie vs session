@@ -1,0 +1,18 @@
+
+
+
+Cookie containes all the user info like password, username, lastname and what ever you collect while he registers. It is then signed with a key basically which means that no one can see what's inside of it. 
+If the user is logged in, he sends the request to access a protected page, he sends the cookie along with the request. 
+
+Practical => print the request object of the dashboard and then search for the keyword "user"
+What actually happening here is that after recieving the cookie in the request, the express-session middleware is unsigning them.   
+
+
+Here all the work is done by the client side. 
+
+------------------------------------------------------------------------------------------------------
+
+
+Session is just an ID. This ID is stored in our broswer as a cookie but the thing is that it doesn't contain any info. It is also singed and containes only an ID. And that ID is stored either in memory or in database. 
+
+Here all the work is done by the server, not the client. When the server recieves the cookies, it unsigns it and finds out the session id, then it finds that session id in the database and then identifies the user. 
